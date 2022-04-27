@@ -8,7 +8,7 @@ export default createStore<{
     guaList: [
       {
         id: "000000",
-        name: "000000",
+        name: "坤卦",
         info: {
           "0": "000000",
           "1": "000000",
@@ -21,7 +21,7 @@ export default createStore<{
       },
       {
         id: "000001",
-        name: "000001",
+        name: "剥卦",
         info: {
           "0": "000001",
           "1": "000001",
@@ -34,7 +34,7 @@ export default createStore<{
       },
       {
         id: "000010",
-        name: "000010",
+        name: "比卦",
         info: {
           "0": "000010",
           "1": "000010",
@@ -47,7 +47,7 @@ export default createStore<{
       },
       {
         id: "000011",
-        name: "000011",
+        name: "观卦",
         info: {
           "0": "000011",
           "1": "000011",
@@ -60,7 +60,7 @@ export default createStore<{
       },
       {
         id: "000100",
-        name: "000100",
+        name: "豫卦",
         info: {
           "0": "000100",
           "1": "000100",
@@ -73,7 +73,7 @@ export default createStore<{
       },
       {
         id: "000101",
-        name: "000101",
+        name: "晋卦",
         info: {
           "0": "000101",
           "1": "000101",
@@ -86,7 +86,7 @@ export default createStore<{
       },
       {
         id: "000110",
-        name: "000110",
+        name: "萃卦",
         info: {
           "0": "000110",
           "1": "000110",
@@ -99,7 +99,7 @@ export default createStore<{
       },
       {
         id: "000111",
-        name: "000111",
+        name: "否卦",
         info: {
           "0": "000111",
           "1": "000111",
@@ -112,7 +112,7 @@ export default createStore<{
       },
       {
         id: "001000",
-        name: "001000",
+        name: "谦卦",
         info: {
           "0": "001000",
           "1": "001000",
@@ -125,7 +125,7 @@ export default createStore<{
       },
       {
         id: "001001",
-        name: "001001",
+        name: "艮卦",
         info: {
           "0": "001001",
           "1": "001001",
@@ -138,7 +138,7 @@ export default createStore<{
       },
       {
         id: "001010",
-        name: "001010",
+        name: "蹇卦",
         info: {
           "0": "001010",
           "1": "001010",
@@ -151,7 +151,7 @@ export default createStore<{
       },
       {
         id: "001011",
-        name: "001011",
+        name: "渐卦",
         info: {
           "0": "001011",
           "1": "001011",
@@ -164,7 +164,7 @@ export default createStore<{
       },
       {
         id: "001100",
-        name: "001100",
+        name: "小过卦",
         info: {
           "0": "001100",
           "1": "001100",
@@ -177,7 +177,7 @@ export default createStore<{
       },
       {
         id: "001101",
-        name: "001101",
+        name: "旅卦",
         info: {
           "0": "001101",
           "1": "001101",
@@ -190,7 +190,7 @@ export default createStore<{
       },
       {
         id: "001110",
-        name: "001110",
+        name: "咸卦",
         info: {
           "0": "001110",
           "1": "001110",
@@ -203,7 +203,7 @@ export default createStore<{
       },
       {
         id: "001111",
-        name: "001111",
+        name: "遁卦",
         info: {
           "0": "001111",
           "1": "001111",
@@ -216,7 +216,7 @@ export default createStore<{
       },
       {
         id: "010000",
-        name: "010000",
+        name: "师卦",
         info: {
           "0": "010000",
           "1": "010000",
@@ -229,7 +229,7 @@ export default createStore<{
       },
       {
         id: "010001",
-        name: "010001",
+        name: "蒙卦",
         info: {
           "0": "010001",
           "1": "010001",
@@ -242,7 +242,7 @@ export default createStore<{
       },
       {
         id: "010010",
-        name: "010010",
+        name: "习坎卦",
         info: {
           "0": "010010",
           "1": "010010",
@@ -255,7 +255,7 @@ export default createStore<{
       },
       {
         id: "010011",
-        name: "010011",
+        name: "涣卦",
         info: {
           "0": "010011",
           "1": "010011",
@@ -268,7 +268,7 @@ export default createStore<{
       },
       {
         id: "010100",
-        name: "010100",
+        name: "解卦",
         info: {
           "0": "010100",
           "1": "010100",
@@ -281,7 +281,7 @@ export default createStore<{
       },
       {
         id: "010101",
-        name: "010101",
+        name: "未济卦",
         info: {
           "0": "010101",
           "1": "010101",
@@ -294,7 +294,7 @@ export default createStore<{
       },
       {
         id: "010110",
-        name: "010110",
+        name: "困卦",
         info: {
           "0": "010110",
           "1": "010110",
@@ -307,7 +307,7 @@ export default createStore<{
       },
       {
         id: "010111",
-        name: "010111",
+        name: "讼卦",
         info: {
           "0": "010111",
           "1": "010111",
@@ -320,7 +320,7 @@ export default createStore<{
       },
       {
         id: "011000",
-        name: "011000",
+        name: "升卦",
         info: {
           "0": "011000",
           "1": "011000",
@@ -333,7 +333,7 @@ export default createStore<{
       },
       {
         id: "011001",
-        name: "011001",
+        name: "蛊卦",
         info: {
           "0": "011001",
           "1": "011001",
@@ -346,7 +346,7 @@ export default createStore<{
       },
       {
         id: "011010",
-        name: "011010",
+        name: "井卦",
         info: {
           "0": "011010",
           "1": "011010",
@@ -359,7 +359,7 @@ export default createStore<{
       },
       {
         id: "011011",
-        name: "011011",
+        name: "巽卦",
         info: {
           "0": "011011",
           "1": "011011",
@@ -372,7 +372,7 @@ export default createStore<{
       },
       {
         id: "011100",
-        name: "011100",
+        name: "恒卦",
         info: {
           "0": "011100",
           "1": "011100",
@@ -385,7 +385,7 @@ export default createStore<{
       },
       {
         id: "011101",
-        name: "011101",
+        name: "鼎卦",
         info: {
           "0": "011101",
           "1": "011101",
@@ -398,7 +398,7 @@ export default createStore<{
       },
       {
         id: "011110",
-        name: "011110",
+        name: "大过卦",
         info: {
           "0": "011110",
           "1": "011110",
@@ -411,7 +411,7 @@ export default createStore<{
       },
       {
         id: "011111",
-        name: "011111",
+        name: "姤卦",
         info: {
           "0": "011111",
           "1": "011111",
@@ -424,7 +424,7 @@ export default createStore<{
       },
       {
         id: "100000",
-        name: "100000",
+        name: "复卦",
         info: {
           "0": "100000",
           "1": "100000",
@@ -437,7 +437,7 @@ export default createStore<{
       },
       {
         id: "100001",
-        name: "100001",
+        name: "颐卦",
         info: {
           "0": "100001",
           "1": "100001",
@@ -450,7 +450,7 @@ export default createStore<{
       },
       {
         id: "100010",
-        name: "100010",
+        name: "屯卦",
         info: {
           "0": "100010",
           "1": "100010",
@@ -463,7 +463,7 @@ export default createStore<{
       },
       {
         id: "100011",
-        name: "100011",
+        name: "益卦",
         info: {
           "0": "100011",
           "1": "100011",
@@ -476,7 +476,7 @@ export default createStore<{
       },
       {
         id: "100100",
-        name: "100100",
+        name: "震卦",
         info: {
           "0": "100100",
           "1": "100100",
@@ -489,7 +489,7 @@ export default createStore<{
       },
       {
         id: "100101",
-        name: "100101",
+        name: "噬嗑卦",
         info: {
           "0": "100101",
           "1": "100101",
@@ -502,7 +502,7 @@ export default createStore<{
       },
       {
         id: "100110",
-        name: "100110",
+        name: "随卦",
         info: {
           "0": "100110",
           "1": "100110",
@@ -515,7 +515,7 @@ export default createStore<{
       },
       {
         id: "100111",
-        name: "100111",
+        name: "无妄卦",
         info: {
           "0": "100111",
           "1": "100111",
@@ -528,7 +528,7 @@ export default createStore<{
       },
       {
         id: "101000",
-        name: "101000",
+        name: "明夷卦",
         info: {
           "0": "101000",
           "1": "101000",
@@ -541,7 +541,7 @@ export default createStore<{
       },
       {
         id: "101001",
-        name: "101001",
+        name: "贲卦",
         info: {
           "0": "101001",
           "1": "101001",
@@ -554,7 +554,7 @@ export default createStore<{
       },
       {
         id: "101010",
-        name: "101010",
+        name: "既济卦",
         info: {
           "0": "101010",
           "1": "101010",
@@ -567,7 +567,7 @@ export default createStore<{
       },
       {
         id: "101011",
-        name: "101011",
+        name: "家人卦",
         info: {
           "0": "101011",
           "1": "101011",
@@ -580,7 +580,7 @@ export default createStore<{
       },
       {
         id: "101100",
-        name: "101100",
+        name: "丰卦",
         info: {
           "0": "101100",
           "1": "101100",
@@ -593,7 +593,7 @@ export default createStore<{
       },
       {
         id: "101101",
-        name: "101101",
+        name: "离卦",
         info: {
           "0": "101101",
           "1": "101101",
@@ -606,7 +606,7 @@ export default createStore<{
       },
       {
         id: "101110",
-        name: "101110",
+        name: "革卦",
         info: {
           "0": "101110",
           "1": "101110",
@@ -619,7 +619,7 @@ export default createStore<{
       },
       {
         id: "101111",
-        name: "101111",
+        name: "同人卦",
         info: {
           "0": "101111",
           "1": "101111",
@@ -632,7 +632,7 @@ export default createStore<{
       },
       {
         id: "110000",
-        name: "110000",
+        name: "临挂",
         info: {
           "0": "110000",
           "1": "110000",
@@ -645,7 +645,7 @@ export default createStore<{
       },
       {
         id: "110001",
-        name: "110001",
+        name: "损卦",
         info: {
           "0": "110001",
           "1": "110001",
@@ -658,7 +658,7 @@ export default createStore<{
       },
       {
         id: "110010",
-        name: "110010",
+        name: "节卦",
         info: {
           "0": "110010",
           "1": "110010",
@@ -671,7 +671,7 @@ export default createStore<{
       },
       {
         id: "110011",
-        name: "110011",
+        name: "中孚卦",
         info: {
           "0": "110011",
           "1": "110011",
@@ -684,7 +684,7 @@ export default createStore<{
       },
       {
         id: "110100",
-        name: "110100",
+        name: "归妹卦",
         info: {
           "0": "110100",
           "1": "110100",
@@ -697,7 +697,7 @@ export default createStore<{
       },
       {
         id: "110101",
-        name: "110101",
+        name: "睽卦",
         info: {
           "0": "110101",
           "1": "110101",
@@ -710,7 +710,7 @@ export default createStore<{
       },
       {
         id: "110110",
-        name: "110110",
+        name: "兑卦",
         info: {
           "0": "110110",
           "1": "110110",
@@ -723,7 +723,7 @@ export default createStore<{
       },
       {
         id: "110111",
-        name: "110111",
+        name: "履卦",
         info: {
           "0": "110111",
           "1": "110111",
@@ -736,7 +736,7 @@ export default createStore<{
       },
       {
         id: "111000",
-        name: "111000",
+        name: "泰卦",
         info: {
           "0": "111000",
           "1": "111000",
@@ -749,7 +749,7 @@ export default createStore<{
       },
       {
         id: "111001",
-        name: "111001",
+        name: "大畜卦",
         info: {
           "0": "111001",
           "1": "111001",
@@ -762,7 +762,7 @@ export default createStore<{
       },
       {
         id: "111010",
-        name: "111010",
+        name: "需卦",
         info: {
           "0": "111010",
           "1": "111010",
@@ -775,7 +775,7 @@ export default createStore<{
       },
       {
         id: "111011",
-        name: "111011",
+        name: "小畜卦",
         info: {
           "0": "111011",
           "1": "111011",
@@ -788,7 +788,7 @@ export default createStore<{
       },
       {
         id: "111100",
-        name: "111100",
+        name: "大壮卦",
         info: {
           "0": "111100",
           "1": "111100",
@@ -801,7 +801,7 @@ export default createStore<{
       },
       {
         id: "111101",
-        name: "111101",
+        name: "大有卦",
         info: {
           "0": "111101",
           "1": "111101",
@@ -814,7 +814,7 @@ export default createStore<{
       },
       {
         id: "111110",
-        name: "111110",
+        name: "夬卦",
         info: {
           "0": "111110",
           "1": "111110",
@@ -827,7 +827,7 @@ export default createStore<{
       },
       {
         id: "111111",
-        name: "111111",
+        name: "乾卦",
         info: {
           "0": "111111",
           "1": "111111",
