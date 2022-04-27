@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <p v-for="(item, idx) in calContent" :key="idx">
-      {{ item }}
-    </p>
+  <div class="h100 df flex-col jcc">
+    <template v-if="calContent.length">
+      <p v-for="(item, idx) in calContent" :key="idx">
+        {{ item }}
+      </p>
+    </template>
+    <p v-else>placeholder</p>
   </div>
 </template>
 
@@ -11,6 +14,9 @@ import type { GuaInfo } from "@/types/common";
 type GenerateGua = (arg: GuaInfo) => void;
 import { useStore } from "vuex";
 import { computed, defineComponent, ref } from "vue";
+
+import Nzh from "nzh";
+const { cn: nzhcn } = Nzh;
 
 export default defineComponent({
   name: "GuaView",
@@ -22,9 +28,9 @@ export default defineComponent({
         ? content.value
         : content.value.map((text, idx) => {
             if (idx === 0) {
-              return `主: ${text}`;
+              return `主 => ${text}`;
             } else if (idx === 1) {
-              return `辅: ${text}`;
+              return `辅 => ${text}`;
             }
           })
     );
@@ -56,7 +62,10 @@ export default defineComponent({
       });
       content.value = yaoIdList.map((item) => {
         const curGua = store.getters.getGuaById(item[0]);
-        return curGua.info[item[1]];
+        return `
+          卦:${curGua.name} =>
+          ${item[1] === "0" ? "卦辞" : nzhcn.encodeS(item[1]) + "爻"}:
+          ${curGua.info[item[1]]}`;
       });
     };
     return {
@@ -67,4 +76,17 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.h100 {
+  height: 100%;
+}
+.df {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.jcc {
+  justify-content: center;
+}
+</style>

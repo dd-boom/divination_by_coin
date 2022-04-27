@@ -2,6 +2,9 @@
   <div class="home">
     <NCard title="其实就是填一些东西再从《易经》里找一些东西">
       <div class="df flex-col">
+        <div class="mb20 h100">
+          <GuaView ref="guaViewRef" />
+        </div>
         <div>
           <NSpace size="large" vertical>
             <NButtonGroup size="small">
@@ -48,9 +51,6 @@
               一键成卦
             </NButton>
           </NSpace>
-        </div>
-        <div>
-          <GuaView ref="guaViewRef" />
         </div>
       </div>
     </NCard>
@@ -131,6 +131,7 @@ export default defineComponent({
     /* ***********start: generate gua**************** */
     const guaViewRef = ref<InstanceType<typeof GuaView>>();
     const handleGenerate = () => {
+      console.log(calCurYaoList.value);
       const totalTrans = calCurYaoList.value.filter(({ isT }) => isT).length;
       const oGuaId = calCurYaoList.value.map(({ oYy }) => oYy).join("");
       const tGuaId = calCurYaoList.value.map(({ tYy }) => tYy).join("");
@@ -204,6 +205,12 @@ export default defineComponent({
 .home {
   max-width: 1200px;
   margin: 0 auto;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.h100 {
+  height: 100px;
 }
 .df {
   display: flex;
