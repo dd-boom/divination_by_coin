@@ -8,7 +8,9 @@
         <div>
           <NSpace size="large" vertical>
             <p class="border-box">
-              小计: {{ curOriginYaoLabelList.join(",") || "空" }}
+              <span>小计: {{ curOriginYaoLabelList.join(",") || "空" }}</span>
+              <br />
+              <span>小计: {{ curYaoList.join(",") || "空" }}</span>
             </p>
             <div>
               同时掷三枚硬币, 记背面朝上的硬币个数, 成一爻, 成六次爻后可成卦
