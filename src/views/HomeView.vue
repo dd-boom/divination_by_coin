@@ -39,6 +39,14 @@
                 <NRadio value="3">3</NRadio>
               </NRadioGroup>
             </div>
+            <NButton
+              v-if="curYaoList.length === 0"
+              size="tiny"
+              round
+              @click="handleEasyGenerate"
+            >
+              一键成卦
+            </NButton>
           </NSpace>
         </div>
         <div>
@@ -70,6 +78,9 @@ const yaoLabelList = ["初爻", "二爻", "三爻", "四爻", "五爻", "上爻"
 type Yy2Label = (yy: YY) => "六" | "九";
 const yy2Label: Yy2Label = (yy) => (yy === YY.ying ? "六" : "九");
 
+const dropIcon = () => Math.random() >= 0.5;
+const drop3Icon = () => new Array(3).fill(false).map(() => dropIcon());
+
 export default defineComponent({
   name: "HomeView",
   components: {
@@ -96,7 +107,7 @@ export default defineComponent({
     const curOriginYaoLabelList = computed(() =>
       calCurYaoList.value.map(({ oYy }, idx) => {
         const curValue = yy2Label(oYy);
-        let curRes = "";
+        let curRes: string;
         if (idx === 0) {
           curRes = `初${curValue}`;
         } else if (idx === 5) {
@@ -167,6 +178,12 @@ export default defineComponent({
       guaViewRef.value?.generateGua(guaInfo);
     };
     /* ***********end: generate gua**************** */
+    const handleEasyGenerate = () => {
+      curYaoList.value = new Array(6)
+        .fill("")
+        .map(() => `${drop3Icon().filter((e) => !e).length}` as Yao);
+      handleGenerate();
+    };
     return {
       yaoLabelList,
       curYaoValue,
@@ -177,6 +194,7 @@ export default defineComponent({
       handleReset,
       guaViewRef,
       handleGenerate,
+      handleEasyGenerate,
     };
   },
 });
