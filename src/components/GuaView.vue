@@ -5,7 +5,7 @@
         {{ item }}
       </p>
     </template>
-    <p v-else>placeholder</p>
+    <p v-else>我是展示区</p>
   </div>
 </template>
 

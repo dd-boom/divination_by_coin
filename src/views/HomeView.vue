@@ -2,14 +2,21 @@
   <div class="home">
     <NCard title="其实就是填一些东西再从《易经》里找一些东西">
       <div class="df flex-col">
-        <div class="mb20 h100">
+        <div class="min-height-100px border-box">
           <GuaView ref="guaViewRef" />
         </div>
         <div>
           <NSpace size="large" vertical>
+            <p class="border-box">
+              小计: {{ curOriginYaoLabelList.join(",") || "空" }}
+            </p>
+            <div>
+              同时掷三枚硬币, 记背面朝上的硬币个数, 成一爻, 成六次爻后可成卦
+            </div>
             <NButtonGroup size="small">
               <NButton
                 v-if="curYaoList.length === 6"
+                type="primary"
                 @click="handleGenerate"
                 round
               >
@@ -17,39 +24,50 @@
               </NButton>
               <NButton
                 v-else-if="curYaoList.length < 6"
+                type="info"
                 @click="handleAddYao"
                 round
               >
                 成爻
               </NButton>
-              <NButton v-if="curYaoList.length > 0" @click="handleRemoveYao">
+              <NButton
+                v-if="curYaoList.length > 0"
+                type="error"
+                @click="handleRemoveYao"
+              >
                 退爻
               </NButton>
               <NButton round @click="handleReset">重置</NButton>
             </NButtonGroup>
-            <div>小计: {{ curOriginYaoLabelList.join(",") || "空" }}</div>
-            <div v-if="curYaoList.length < 6">
-              <span
-                class="cursor-default"
-                title="同时掷三个铜钱, 记录背面朝上的铜钱个数, 为一爻"
+            <template v-if="curYaoList.length < 6">
+              <div>本次投掷背面朝上的硬币个数:</div>
+              <div>
+                <span
+                  class="cursor-default"
+                  title="同时掷三个铜钱, 记录背面朝上的铜钱个数, 为一爻"
+                >
+                  {{ yaoLabelList[curYaoList.length] }} :
+                </span>
+                <NRadioGroup v-model:value="curYaoValue">
+                  <NRadio value="0">0</NRadio>
+                  <NRadio value="1">1</NRadio>
+                  <NRadio value="2">2</NRadio>
+                  <NRadio value="3">3</NRadio>
+                </NRadioGroup>
+              </div>
+            </template>
+            <template v-if="curYaoList.length === 0">
+              <div class="pt30px">或者你懒得掷硬币也可以使用"一键成卦"(笑)</div>
+              <NButton
+                type="primary"
+                size="small"
+                round
+                tertiary
+                @click="handleEasyGenerate"
               >
-                {{ yaoLabelList[curYaoList.length] }}:
-              </span>
-              <NRadioGroup v-model:value="curYaoValue">
-                <NRadio value="0">0</NRadio>
-                <NRadio value="1">1</NRadio>
-                <NRadio value="2">2</NRadio>
-                <NRadio value="3">3</NRadio>
-              </NRadioGroup>
-            </div>
-            <NButton
-              v-if="curYaoList.length === 0"
-              size="tiny"
-              round
-              @click="handleEasyGenerate"
-            >
-              一键成卦
-            </NButton>
+                一键成卦
+              </NButton>
+            </template>
           </NSpace>
         </div>
       </div>
@@ -120,7 +138,7 @@ export default defineComponent({
     );
     const handleAddYao = () => {
       curYaoList.value.push(curYaoValue.value);
-      curYaoValue.value = "0";
+      // curYaoValue.value = "0";
     };
     const handleRemoveYao = () => {
       curYaoList.value.pop();
@@ -206,11 +224,8 @@ export default defineComponent({
   max-width: 1200px;
   margin: 0 auto;
 }
-.mb20 {
-  margin-bottom: 20px;
-}
-.h100 {
-  height: 100px;
+.min-height-100px {
+  min-height: 100px;
 }
 .df {
   display: flex;
@@ -229,5 +244,13 @@ export default defineComponent({
 }
 .cursor-default {
   cursor: default;
+}
+.border-box {
+  border: 1px dashed #58bc58;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.pt30px {
+  padding-top: 30px;
 }
 </style>
