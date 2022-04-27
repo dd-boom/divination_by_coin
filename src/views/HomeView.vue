@@ -122,6 +122,7 @@ export default defineComponent({
     NSpace,
   },
   setup() {
+    const guaViewRef = ref<InstanceType<typeof GuaView>>();
     const curYaoValue = ref<Yao>("0");
     const curYaoList = ref<Yao[]>([]);
     const calCurYaoList = computed(() =>
@@ -156,9 +157,9 @@ export default defineComponent({
     };
     const handleReset = () => {
       curYaoList.value = [];
+      guaViewRef.value?.clearContent();
     };
     /* ***********start: generate gua**************** */
-    const guaViewRef = ref<InstanceType<typeof GuaView>>();
     const handleGenerate = () => {
       console.log(calCurYaoList.value);
       const totalTrans = calCurYaoList.value.filter(({ isT }) => isT).length;

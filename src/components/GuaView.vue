@@ -34,6 +34,9 @@ export default defineComponent({
             }
           })
     );
+    const clearContent = () => {
+      content.value = [];
+    };
     const generateGua: GenerateGua = ({
       totalTrans,
       oYao,
@@ -71,6 +74,7 @@ export default defineComponent({
     return {
       calContent,
       generateGua,
+      clearContent,
     };
   },
 });
