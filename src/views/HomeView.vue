@@ -15,29 +15,40 @@
             </div>
             <NButtonGroup size="small">
               <NButton
-                v-if="curYaoList.length === 6"
-                type="primary"
-                @click="handleGenerate"
+                secondary
                 round
-              >
-                成卦
-              </NButton>
-              <NButton
-                v-else-if="curYaoList.length < 6"
+                :disabled="curYaoList.length >= 6"
                 type="info"
                 @click="handleAddYao"
-                round
               >
                 成爻
               </NButton>
               <NButton
-                v-if="curYaoList.length > 0"
+                secondary
+                round
+                :disabled="curYaoList.length === 0"
                 type="error"
                 @click="handleRemoveYao"
               >
                 退爻
               </NButton>
-              <NButton round @click="handleReset">重置</NButton>
+              <NButton
+                secondary
+                round
+                :disabled="curYaoList.length === 0"
+                @click="handleReset"
+              >
+                重置
+              </NButton>
+              <NButton
+                secondary
+                round
+                :disabled="curYaoList.length !== 6"
+                type="primary"
+                @click="handleGenerate"
+              >
+                成卦
+              </NButton>
             </NButtonGroup>
             <template v-if="curYaoList.length < 6">
               <div>本次投掷背面朝上的硬币个数:</div>
