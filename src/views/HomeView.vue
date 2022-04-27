@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <NCard title="其实就是填一些东西再从《易经》里找一些东西">
+    <NCard title="其实就是填一些东西再从《周易》里找一些东西">
       <div class="df flex-col">
         <div class="min-height-100px border-box">
           <GuaView ref="guaViewRef" />
