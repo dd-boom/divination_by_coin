@@ -7,80 +7,48 @@
         </div>
         <div>
           <NSpace size="large" vertical>
-            <p class="border-box">
-              <span>小计: {{ curOriginYaoLabelList.join(",") || "空" }}</span>
-              <br />
-              <span>小计: {{ curYaoList.join(",") || "空" }}</span>
-            </p>
-            <div>
-              同时掷三枚硬币, 记背面朝上的硬币个数, 成一爻, 成六次爻后可成卦
+            <div class="pt30px">
+              同时掷三枚硬币, 记
+              <mark>背面朝上</mark>
+              的硬币个数, 填入下表, 共掷六次
             </div>
             <NButtonGroup size="small">
-              <NButton
-                secondary
-                round
-                :disabled="curYaoList.length >= 6"
-                type="info"
-                @click="handleAddYao"
-              >
-                成爻
-              </NButton>
-              <NButton
-                secondary
-                round
-                :disabled="curYaoList.length === 0"
-                type="error"
-                @click="handleRemoveYao"
-              >
-                退爻
-              </NButton>
-              <NButton
-                secondary
-                round
-                :disabled="curYaoList.length === 0"
-                @click="handleReset"
-              >
-                重置
-              </NButton>
-              <NButton
-                secondary
-                round
-                :disabled="curYaoList.length !== 6"
-                type="primary"
-                @click="handleGenerate"
-              >
+              <NButton secondary round type="primary" @click="handleGenerate">
                 成卦
               </NButton>
+              <NButton secondary round @click="handleReset"> 重置 </NButton>
             </NButtonGroup>
-            <template v-if="curYaoList.length < 6">
-              <div>本次投掷背面朝上的硬币个数:</div>
-              <div>
+            <div>请填写每掷<mark>背面朝上</mark>的硬币个数:</div>
+            <div>
+              <template v-for="(yao, idx) in curYaoList" :key="idx">
                 <span
                   class="cursor-default"
                   title="同时掷三个铜钱, 记录背面朝上的铜钱个数, 为一爻"
                 >
-                  {{ yaoLabelList[curYaoList.length] }} :
+                  [第{{ nzhcn.encodeS(idx + 1) }}掷] {{ yaoLabelList[idx] }} :
                 </span>
-                <NRadioGroup v-model:value="curYaoValue">
+                <NRadioGroup v-model:value="curYaoList[idx]">
                   <NRadio value="0">0</NRadio>
                   <NRadio value="1">1</NRadio>
                   <NRadio value="2">2</NRadio>
                   <NRadio value="3">3</NRadio>
                 </NRadioGroup>
-              </div>
-            </template>
-            <template v-if="curYaoList.length === 0">
-              <div class="pt30px">或者你懒得掷硬币也可以使用"一键成卦"(笑)</div>
-              <NButton
-                type="primary"
-                size="small"
-                round
-                tertiary
-                @click="handleEasyGenerate"
-              >
-                一键成卦
-              </NButton>
-            </template>
+                <span style="margin-left: 10px">
+                  [ {{ curOriginYaoLabelList[idx] }} ]
+                </span>
+                <br />
+              </template>
+            </div>
+            <div class="pt30px">或者你懒得掷硬币也可以使用"随机成卦"(笑)</div>
+            <NButton
+              type="primary"
+              size="small"
+              round
+              tertiary
+              @click="handleEasyGenerate"
+            >
+              随机成卦
+            </NButton>
           </NSpace>
         </div>
       </div>
@@ -125,8 +93,7 @@ export default defineComponent({
   },
   setup() {
     const guaViewRef = ref<InstanceType<typeof GuaView>>();
-    const curYaoValue = ref<Yao>("0");
-    const curYaoList = ref<Yao[]>([]);
+    const curYaoList = ref<Yao[]>(["0", "0", "0", "0", "0", "0"]);
     const calCurYaoList = computed(() =>
       curYaoList.value.map((item, idx) => ({
         yao: item,
@@ -150,15 +117,8 @@ export default defineComponent({
         return curRes;
       })
     );
-    const handleAddYao = () => {
-      curYaoList.value.push(curYaoValue.value);
-      // curYaoValue.value = "0";
-    };
-    const handleRemoveYao = () => {
-      curYaoList.value.pop();
-    };
     const handleReset = () => {
-      curYaoList.value = [];
+      curYaoList.value = ["0", "0", "0", "0", "0", "0"];
       guaViewRef.value?.clearContent();
     };
     /* ***********start: generate gua**************** */
@@ -219,15 +179,13 @@ export default defineComponent({
     };
     return {
       yaoLabelList,
-      curYaoValue,
       curYaoList,
       curOriginYaoLabelList,
-      handleAddYao,
-      handleRemoveYao,
       handleReset,
       guaViewRef,
       handleGenerate,
       handleEasyGenerate,
+      nzhcn,
     };
   },
 });
@@ -237,6 +195,9 @@ export default defineComponent({
 .home {
   max-width: 1200px;
   margin: 0 auto;
+  mark {
+    background-color: #daf0e4;
+  }
 }
 .min-height-100px {
   min-height: 100px;
@@ -250,12 +211,7 @@ export default defineComponent({
 .ac {
   align-items: center;
 }
-.flex1 {
-  flex: 1;
-}
-.text_align_left {
-  text-align: left;
-}
+
 .cursor-default {
   cursor: default;
 }
