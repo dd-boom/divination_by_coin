@@ -1,16 +1,17 @@
 <template>
   <div class="home">
-    <NCard title="其实就是填一些东西再从《周易》里找一些东西">
+    <NCard title="其实我觉得不用铜钱，用硬币也行">
       <div class="df flex-col">
-        <div class="min-height-100px border-box">
+        <div class="min-height-100px">
           <GuaView ref="guaViewRef" />
         </div>
         <div>
           <NSpace size="large" vertical>
             <div class="pt30px">
-              同时掷三枚硬币, 记
-              <mark>背面朝上</mark>
-              的硬币个数, 填入下表, 共掷六次
+              同时掷三枚硬币，<br />
+              记<mark>背面朝上</mark>的硬币个数，<br />
+              共掷六次，<br />
+              填入下表。<br />
             </div>
             <NButtonGroup size="small">
               <NButton secondary round type="primary" @click="handleGenerate">
@@ -217,8 +218,6 @@ export default defineComponent({
 }
 .border-box {
   border: 1px dashed #58bc58;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 .pt30px {
   padding-top: 30px;
